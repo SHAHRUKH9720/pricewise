@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calculator, Heart } from 'lucide-react';
+import { Calculator } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
