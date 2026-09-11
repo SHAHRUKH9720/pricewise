@@ -1,0 +1,51 @@
+import React from 'react';
+import { Sparkles, ArrowDown, Code2 } from 'lucide-react';
+
+interface HeroProps {
+  onStartClick?: () => void;
+}
+
+export const Hero: React.FC<HeroProps> = ({ onStartClick }) => {
+  return (
+    <section className="relative py-12 md:py-16 overflow-hidden">
+      {/* Subtle Background Glows */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-blue-100/60 rounded-full blur-3xl pointer-events-none -z-10" />
+
+      <div className="max-w-4xl mx-auto px-4 text-center">
+        {/* Badge */}
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-blue-700 text-xs sm:text-sm font-semibold mb-6 shadow-sm">
+          <Sparkles className="w-4 h-4 text-blue-600 shrink-0" />
+          <span>₹ Smart Shopping Calculator</span>
+          <span className="text-blue-300">•</span>
+          <span className="flex items-center gap-1 text-slate-600 font-medium">
+            <Code2 className="w-3.5 h-3.5 text-blue-600" /> Developed by <strong className="text-slate-900 font-semibold">Shahrukh</strong>
+          </span>
+        </div>
+
+        {/* Hero Heading */}
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight sm:leading-tight mb-4">
+          Calculate Smarter. <br className="hidden sm:inline" />
+          <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+            Shop Better.
+          </span>
+        </h1>
+
+        {/* Supporting text */}
+        <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto mb-8 font-medium leading-relaxed">
+          Price, quantity & ₹/kg — instantly.
+        </p>
+
+        {/* Scroll CTA indicator */}
+        {onStartClick && (
+          <button
+            onClick={onStartClick}
+            className="inline-flex items-center gap-2 text-xs font-semibold text-slate-500 hover:text-blue-600 transition-colors"
+          >
+            <span>Start calculating</span>
+            <ArrowDown className="w-3.5 h-3.5 animate-bounce" />
+          </button>
+        )}
+      </div>
+    </section>
+  );
+};
