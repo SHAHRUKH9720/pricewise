@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sparkles, ArrowDown, Code2 } from 'lucide-react';
+import { Sparkles, ArrowDown } from 'lucide-react';
 
 interface HeroProps {
   onStartClick?: () => void;
@@ -12,13 +12,14 @@ export const Hero: React.FC<HeroProps> = ({ onStartClick }) => {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-blue-100/60 rounded-full blur-3xl pointer-events-none -z-10" />
 
       <div className="max-w-4xl mx-auto px-4 text-center">
-        {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-blue-700 text-xs sm:text-sm font-semibold mb-6 shadow-sm">
-          <Sparkles className="w-4 h-4 text-blue-600 shrink-0" />
-          <span>₹ Smart Shopping Calculator</span>
-          <span className="text-blue-300">•</span>
-          <span className="flex items-center gap-1 text-slate-600 font-medium">
-            <Code2 className="w-3.5 h-3.5 text-blue-600" /> Developed by <strong className="text-slate-900 font-semibold">Shahrukh</strong>
+        {/* Developer Badge */}
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-blue-50/90 via-indigo-50 to-blue-50/90 border border-blue-200/90 shadow-sm shadow-blue-500/10 mb-6 group transition-all duration-300 hover:shadow-md hover:border-blue-300 whitespace-nowrap">
+          <Sparkles className="w-3.5 h-3.5 text-blue-600 shrink-0 group-hover:rotate-12 transition-transform" />
+          <span className="text-xs sm:text-sm font-semibold text-slate-600 tracking-wide">
+            Developed by{' '}
+            <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 bg-clip-text text-transparent font-extrabold tracking-tight">
+              Shahrukh
+            </span>
           </span>
         </div>
 
